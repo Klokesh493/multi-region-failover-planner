@@ -1,0 +1,4 @@
+region,health,free_capacity_pct,replication_lag_sec
+us-east,green,20,20
+us-west,green,40,45
+eu-central,yellow,60,10
