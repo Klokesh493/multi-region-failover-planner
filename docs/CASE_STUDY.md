@@ -2,7 +2,7 @@
 
 ## Business problem
 
-Chooses the safest failover region based on health, capacity, and replication lag.
+A healthy standby region may lack capacity or have stale data. Failover review needs to consider all three signals before recommending a target.
 
 ## Reproduce the workflow
 
