@@ -24,4 +24,16 @@ Run `make verify` with Make and Python 3 installed. The target runs the document
 
 ## Project walkthrough
 
+```mermaid
+flowchart LR
+    A["Region health, capacity, and replication lag"]
+    B["Keep green regions with at least 25% capacity and at most 60 s lag"]
+    C{"Any eligible region?"}
+    D["Rank by free capacity then replication lag"]
+    E["No safe failover"]
+    A --> B --> C
+    C -->|Yes| D
+    C -->|No| E
+```
+
 [Architecture and data flow](docs/ARCHITECTURE.md) · [Business problem, demo, and verification](docs/CASE_STUDY.md)

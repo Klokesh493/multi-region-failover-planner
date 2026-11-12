@@ -4,11 +4,14 @@ Chooses the safest failover region based on health, capacity, and replication la
 
 ```mermaid
 flowchart LR
-    N0["sample_regions.csv"]
-    N1["failover_planner.py"]
-    N2["choose region"]
-    N3["Result for operator review"]
-    N0 --> N1 --> N2 --> N3
+    A["Region health, capacity, and replication lag"]
+    B["Keep green regions with at least 25% capacity and at most 60 s lag"]
+    C{"Any eligible region?"}
+    D["Rank by free capacity then replication lag"]
+    E["No safe failover"]
+    A --> B --> C
+    C -->|Yes| D
+    C -->|No| E
 ```
 
 ## Operational boundaries
