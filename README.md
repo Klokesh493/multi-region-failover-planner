@@ -2,6 +2,8 @@
 
 A healthy standby region may lack capacity or have stale data. Failover review needs to consider all three signals before recommending a target.
 
+[Skills and verification](docs/ENGINEERING_NOTES.md)
+
 ## What I built
 
 I built a failover selection CLI that keeps green regions with at least 25% free capacity and no more than 60 seconds of replication lag. It ranks eligible regions by available capacity, then by lowest lag.
